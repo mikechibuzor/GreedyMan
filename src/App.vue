@@ -1,6 +1,6 @@
 <template>
  <keep-alive >
-   <component @start="toggleComponent" :is="showComponent"></component>
+   <component @start="toggleComponent" :is="showComponent" :gridnumber="gridNum"></component>
  </keep-alive>
 </template>
 
@@ -17,12 +17,15 @@ export default {
   },
   data(){
     return{
-      show: false,
+      show: true,
+      gridNum: null,
     }
   },
   methods:{
-    toggleComponent(){
+    toggleComponent(num){
       this.show = !this.show;
+      this.gridNum = num;
+     
     },
   },
   computed:{

@@ -60,7 +60,7 @@ export default {
         startButton(){
             if(this.$refs.number.value >= 5 && this.$refs.number.value <= 12){
                 this.showError = true;
-                this.$emit('start');
+                this.$emit('start', this.$refs.number.value);
             }else{
                 this.showError = true;
             }

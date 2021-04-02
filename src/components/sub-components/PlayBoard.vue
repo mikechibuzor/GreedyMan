@@ -1,6 +1,6 @@
 <template>
-  <div class="play-board grid grid-cols-10 border-2 border-primary-color">
-      <single-cell v-for="c in 100" :key="c"  > {{ c }} </single-cell>
+  <div class="play-board grid border-2 border-primary-color" :class="createGrid">
+      <single-cell v-for="c in createTotalCell" :key="c"> {{ c }} </single-cell>
   </div>
 </template>
 
@@ -8,12 +8,23 @@
 import SingleCell from './SingleCell.vue';
 export default {
     name: 'PlayBoard',
+    props:['gridnumber'],
     components:{
-        SingleCell
+        SingleCell,
     },
+    computed:{
+        createGrid(){
+            return `grid-cols-${this.gridnumber}`;
+        },
+        createTotalCell(){
+            return Number(this.gridnumber) * Number(this.gridnumber);
+        }
+    }
 }
 </script>
 
-<style>
-
+<style scoped>
+   .play-board{
+        height: 82%;
+    }
 </style>
