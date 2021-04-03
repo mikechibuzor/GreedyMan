@@ -1,6 +1,6 @@
 <template>
     <header class="flex items-center justify-between ">
-        <div class="">
+        <div class="grid-num">
             <h3 class="text-xs font-bold">Grid: {{ gridnumber }} X {{ gridnumber }}</h3>
         </div>
         <div class="life-bar">
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="time">
-            <p class="text-xs ">Time spent: {{ minutesLabel }}: {{ secondsLabel }} secs</p>
+            <p class="text-xs ">Time spent: {{ timeMinutes }} mins :{{ timeSeconds }} secs</p>
         </div>
     </header>
 </template>
@@ -27,36 +27,38 @@ export default {
     props: ['gridnumber'],
     data(){
         return{
-            totalSeconds: 0,
-            secondsLabel: null,
-            minutesLabel: null,
+            count: 0,
+            timeStop: null,
+        }
+    },
+    methods:{
+        incrementCount(){
+            this.count++;
         }
     },
     computed:{
-        // setTime() {
-        //     ++this.totalSeconds;
-        //     this.secondsLabel = this.pad(this.totalSeconds % 60);
-        //     this.minutesLabel = this.pad(parseInt(this.totalSeconds / 60));
-        // },
-        // pad(val) {
-        //     var valString = val + "";
-        //     if (valString.length < 2) {
-        //         return "0" + valString;
-        //     } else {
-        //         return valString;
-        //     }
-        // }
-
+        timeSeconds(){
+            return this.count % 60;
+        },
+        timeMinutes(){
+            return Math.floor((this.count / 60));
+        }
     },
-    // created(){
-    //     this.setTime();
-    // }
+    mounted(){
+        this.timeStop = setInterval(this.incrementCount, 1000);
+    },
+    unmounted(){
+        clearInterval(this.timeStop);
+    }
 }
 </script>
 
 <style scoped>
- .life-bar{
+    .life-bar{
         flex: 0 0 22.33%;
+    }
+    .time{
+        flex: 0 0 33.33%;
     }
     .progress-bar{
         height: .7rem;
