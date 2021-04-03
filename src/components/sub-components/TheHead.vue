@@ -54,6 +54,9 @@ export default {
 </script>
 
 <style scoped>
+    .grid-num{
+        flex: 0 0 24.34%;
+    }
     .life-bar{
         flex: 0 0 22.33%;
     }

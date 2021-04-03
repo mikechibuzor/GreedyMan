@@ -1,11 +1,13 @@
 <template>
   <div class="play-board grid border-2 border-primary-color" :class="createGrid">
-      <single-cell v-for="c in createTotalCell" :key="c"> {{ c }} </single-cell>
+      <single-cell v-for="c in createTotalCell" :key="c" :id="c"> {{ c }} </single-cell>
   </div>
 </template>
 
 <script>
 import SingleCell from './SingleCell.vue';
+
+
 export default {
     name: 'PlayBoard',
     props:['gridnumber'],
@@ -18,7 +20,7 @@ export default {
         },
         createTotalCell(){
             return Number(this.gridnumber) * Number(this.gridnumber);
-        }
+        },
     }
 }
 </script>
