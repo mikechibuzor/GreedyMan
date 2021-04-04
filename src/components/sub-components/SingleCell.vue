@@ -12,7 +12,7 @@ export default {
           event.dataTransfer.dropEffect = 'move';
       },
       dropHandler(event){
-        const child = document.getElementById(event.getData('application/my-app'));
+        const child = document.getElementById(event.dataTransfer.getData('application/my-app'));
         event.target.appendChild(child);
       }
   },
