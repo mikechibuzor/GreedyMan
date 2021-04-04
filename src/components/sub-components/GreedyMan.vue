@@ -1,6 +1,6 @@
 <template>
-  <p ref="greedyman" draggable="true" @dragstart="dragstartHandler" class="h-6 w-6">
-    <svg class="h-full w-full" viewBox="0 0 35 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <p ref="greedyman" id="greedyman" draggable="true" @dragstart="dragstartHandler" class="h-6 w-6">
+    <svg id="svg" class="h-full w-full" viewBox="0 0 35 38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9 38L11.3981 33H23.5486L26 38H9Z" fill="#F07CC3"/>
         <circle cx="17.5" cy="17.5" r="17" fill="#CBCBFF" stroke="#532461"/>
         <path d="M13.5 9.5C12.5 10.6667 10.4 13.1 10 13.5L5.5 19.5L3.5 25L7 21L11.5 14.5L13.5 9.5Z" fill="#EE8D94"/>
@@ -21,7 +21,7 @@
 export default {
     methods:{
         dragstartHandler(event){
-            event.dataTransfer.setData('application/my-app', event.target.ref);
+            event.dataTransfer.setData('application/my-app', event.target.id);
             event.dataTransfer.effectAllowed = 'move';
         },
     }

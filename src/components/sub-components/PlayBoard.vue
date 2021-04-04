@@ -1,7 +1,7 @@
 <template>
   <div id="parent" ref="parent" class="play-board grid border-2 border-primary-color" :class="createGrid">
       <single-cell v-for="c in createTotalCell.number" :key="c" :id="c"> 
-          <template v-if=" createTotalCell.randomPosition.find( pos => pos === c) ">
+          <template v-if=" createTotalCell.randomPosition.find( pos => pos === c) && c !== createTotalCell.greedyManPos ">
               <the-food></the-food>
           </template>
           <template v-else-if="c === createTotalCell.greedyManPos">

@@ -1,5 +1,5 @@
 <template>
-  <div :id="id"  @drop.prevent="dropHandler" @dragover.prevent="dragoverHandler" class="cell border  border-primary-color flex items-center justify-center cursor-pointer">
+  <div :id="id"  @drop.prevent="dropHandler" @dragover.prevent="dragoverHandler" class="cell border  border-primary-color flex items-center justify-center">
     <slot></slot>
   </div>
 </template>
@@ -13,8 +13,9 @@ export default {
       },
       dropHandler(event){
         const child = document.getElementById(event.dataTransfer.getData('application/my-app'));
-        event.target.appendChild(child);
-      }
+        event.currentTarget.append(child);
+        console.log(child);
+      }  
   },
 }
 </script>
