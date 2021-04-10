@@ -32,13 +32,7 @@ export default {
     .game-board{
         box-shadow: 2px 2px 2px rgba(0, 0, 0, .15),
                     -2px -2px 2px rgba(0, 0, 0, .05);
-<<<<<<< HEAD
     } 
-=======
-    }
-
-   
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
 
 </style>
 

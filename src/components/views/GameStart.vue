@@ -21,20 +21,11 @@
                 </svg>
             </div>
             <div class="message mb-4">
-<<<<<<< HEAD
                 <h1 class="text-5xl font-medium  text-secondary-yellow">{{ message }}</h1>
             </div>
             <div class="instruction mb-8">
                 <p class="text-secondary-ashlike text-lg text-center leading-loose">
                     {{ endMoves }} <br v-if=" !win "/> {{ timeSpent }}
-=======
-                <h1 class="text-5xl font-medium  text-secondary-yellow">Greedy Hunter</h1>
-            </div>
-            <div class="instruction mb-8">
-                <p class="text-secondary-ashlike text-lg text-center leading-loose">
-                    The aim is to eat all the food in record time. <br />
-                    Configure your game grid below. 
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
                 </p>
             </div>
             <form action="#" @submit.prevent="startButton" class="flex flex-col items-center justify-center">
@@ -44,11 +35,7 @@
                 <input ref="number" type="number" max="12" min="5" class="border-2 py-1 w-24 rounded text-white cursor-pointer border-secondary-pinklike  px-1 text-xl bg-transparent " />
                 </div>
                 <div class="start-button">
-<<<<<<< HEAD
                 <button type="submit" class="px-16 py-3 shadow-md rounded-md text-white flex items-center justify-center bg-secondary-purplelike">{{ startButtonText }}</button>
-=======
-                <button type="submit" class="px-16 py-3 shadow-md rounded-md text-white flex items-center justify-center bg-secondary-purplelike">Start game</button>
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
                 </div>
             </form>
         </main>
@@ -62,19 +49,13 @@
 <script>
 export default {
     name: 'GameStart',
-<<<<<<< HEAD
     emits:['start'],
-=======
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
     data(){
         return{
             errorMsg: 'Please enter a grid number between 5 - 12',
             showError: false,
-<<<<<<< HEAD
             moves: 0,
             times: 0,
-=======
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
         }
     },
     methods:{
@@ -84,7 +65,6 @@ export default {
                 this.$emit('start', this.$refs.number.value);
             }else{
                 this.showError = true;
-<<<<<<< HEAD
                 this.startButtonText = 'Start again';
             }
             
@@ -106,11 +86,6 @@ export default {
         win(){
             return this.$store.getters['getWin'];
         }
-=======
-            }
-            
-        }
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
     }
 }
 </script>

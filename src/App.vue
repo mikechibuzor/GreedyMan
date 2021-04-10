@@ -1,13 +1,7 @@
 <template>
-<<<<<<< HEAD
 
    <component @start="toggleComponent" :is="showComponent" :gridnumber="gridNum"></component>
 
-=======
- <keep-alive >
-   <component @start="toggleComponent" :is="showComponent" :gridnumber="gridNum"></component>
- </keep-alive>
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
 </template>
 
 <script>
@@ -31,7 +25,6 @@ export default {
     toggleComponent(num){
       this.show = !this.show;
       this.gridNum = num;
-<<<<<<< HEAD
     },
     dispatchMessageActionHandler(text){
       this.$store.dispatch({
@@ -64,15 +57,10 @@ export default {
         value: arg,
       });
     }
-=======
-     
-    },
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
   },
   computed:{
     showComponent(){
       return this.show ? 'GameStart': 'GamePlay';
-<<<<<<< HEAD
     },
     moves(){
       return this.$store.getters['getMoves'];
@@ -114,10 +102,6 @@ export default {
      }
    }
  }
-=======
-    }
-  }
->>>>>>> e8cccfc01daf3508cf5293d3c6648a58a4347888
 }
 </script>
 
